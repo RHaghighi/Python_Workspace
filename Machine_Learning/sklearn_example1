@@ -1,0 +1,31 @@
+#! /usr/bin/python
+
+from sklearn.datasets import load_iris
+from sklearn.neighbors import KNeighborsClassifier
+
+iris = load_iris()
+type(iris)
+
+print(iris.data)
+print(iris.feature_names)
+print(iris.target)
+print(iris.target_names)
+
+x = iris.data
+y = iris.target
+
+print(x.shape)
+print(y.shape)
+
+knn = KNeighborsClassifier(n_neighbors=1)
+
+print(knn)
+
+knn.fit(x, y)
+
+y.pred = knn.predict([[3, 5, 4, 2]])
+
+
+
+x_new = [[3, 5, 4, 2], [5, 4, 3, 2]]
+knn.predict(x_new)

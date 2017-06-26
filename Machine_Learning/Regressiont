@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+
+import pandas as pt
+import quandl
+
+
+df = quandl.get("NSX/GOOGL", authtoken="mXLCqQFzD8ymNWGyUc7t")
+
+print(df.head())
